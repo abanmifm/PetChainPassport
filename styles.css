@@ -1,0 +1,598 @@
+:root{
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --brand:#1f5f88;
+  --card:#f8fafc;
+  --border:#e2e8f0;
+
+  /* =========================
+     PHONE SCREEN CALIBRATION
+     Change ONLY these 5 values
+     ========================= */
+  --screen-top: 23px;
+  --screen-right: 10px;
+  --screen-bottom: 20px;
+  --screen-left: 10px;
+  --screen-radius: 30px;
+}
+
+/* Base */
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+a{ text-decoration:none; color:inherit; }
+
+/* Layout */
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:40px 20px;
+}
+.hero{
+  display:grid;
+  justify-items:center;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:24px;
+  max-width:460px;
+  width:100%;
+}
+.caption{
+  margin-top:16px;
+  text-align:center;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* Phone */
+.phoneWrap{
+  display:flex;
+  justify-content:center;
+}
+
+.phoneStage{
+  position:relative;
+  width:260px;
+  max-width:100%;
+
+  /* CRITICAL: creates a stable containing block height */
+  aspect-ratio: 9 / 19.5;
+}
+
+.phoneFrame{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  z-index:3;
+  pointer-events:none;
+}
+
+/* Screen window */
+.phoneScreen{
+  position:absolute;
+  top:var(--screen-top);
+  right:var(--screen-right);
+  bottom:var(--screen-bottom);
+  left:var(--screen-left);
+
+  border-radius:var(--screen-radius);
+  overflow:hidden;
+  background:#0b1220;
+  z-index:2;
+
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+/* App */
+.app{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  background:linear-gradient(180deg,#0b1220,#08101e);
+  color:#e5e7eb;
+
+  /* makes .appNav absolute relative to the app */
+  position:relative;
+}
+
+/* Header (compact) */
+.appTop{
+  padding:30px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.appTop .left{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  flex:1;
+  min-width:0;
+}
+
+.titleBlock{ min-width:0; }
+
+.appLogo{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  background:rgba(255,255,255,.08);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+.appLogo img{
+  width:40px;
+  height:auto;
+  border-radius:6px;
+}
+
+.appTitle{
+  font-size:13px;
+  font-weight:800;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.appSub{
+  font-size:9px;
+  opacity:.75;
+  margin-top:1px;
+}
+
+.pill{
+  font-size:9px;
+  font-weight: bold;
+  padding:7px 8px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  flex-shrink:0;
+  max-width:120px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* Body */
+.appBody{
+  flex:1;
+  padding:10px;
+  overflow:auto;
+
+  /* reserve space for bottom nav so buttons never sit under it */
+  padding-bottom:88px;
+
+  scrollbar-width:none;
+}
+.appBody::-webkit-scrollbar{ display:none; }
+
+.sectionH{
+  font-weight:800;
+  font-size:12px;
+  margin:6px 0 8px;
+}
+
+.panel{
+  background:rgba(255,255,255,.06);
+  border-radius:14px;
+  padding:9px;
+  margin-bottom:8px;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+.kv{ font-size:11px; line-height:1.25; }
+.small{ font-size:9px; opacity:.72; margin-top:2px; }
+
+.ok,.warn{
+  font-size:9px;
+  padding:3px 8px;
+  border-radius:999px;
+  font-weight:700;
+  flex-shrink:0;
+}
+.ok{ background:rgba(16,185,129,.20); color:#d1fae5; }
+.warn{ background:rgba(245,158,11,.20); color:#ffedd5; }
+
+/* Buttons */
+.btnRow{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:6px;
+}
+.appBtn{
+  flex:1;
+  text-align:center;
+  padding:8px 10px;
+  border-radius:12px;
+  font-size:11px;
+  font-weight:700;
+  background:var(--brand);
+  color:#fff;
+
+  /* CRITICAL: allow shrinking so it fits narrow screens */
+  min-width:0;
+}
+.appBtn.secondary{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.10);
+}
+
+/* Bottom nav (compact) */
+.appNav{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+
+  padding:6px 8px;
+  display:flex;
+  gap:6px;
+  background:rgba(2,6,23,.90);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+
+.tab{
+  flex:1;
+  text-align:center;
+  padding:5px 4px;
+  font-size:9px;
+  border-radius:10px;
+  opacity:.65;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  border:1px solid transparent;
+}
+.tab.active{
+  background:rgba(255,255,255,.10);
+  opacity:1;
+  border-color:rgba(255,255,255,.10);
+}
+
+
+
+
+/* =========================
+   VISUAL UPGRADE PACK
+   Paste at the END of styles.css
+   ========================= */
+
+:root{
+  --glass: rgba(255,255,255,.08);
+  --glass-2: rgba(255,255,255,.12);
+  --stroke: rgba(255,255,255,.12);
+  --stroke-2: rgba(255,255,255,.18);
+
+  --shadow-1: 0 10px 28px rgba(0,0,0,.30);
+  --shadow-2: 0 1px 0 rgba(255,255,255,.08) inset;
+
+  --focus: rgba(56,189,248,.45);
+}
+
+/* App background with subtle depth */
+.app{
+  background:
+    radial-gradient(900px 450px at 20% 10%, rgba(56,189,248,.18), transparent 55%),
+    radial-gradient(800px 420px at 80% 30%, rgba(99,102,241,.14), transparent 58%),
+    linear-gradient(180deg, #0b1220 0%, #08101e 100%);
+}
+
+/* Top bar: glass + cleaner border */
+.appTop{
+  background: rgba(2,6,23,.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.appLogo{
+  width:26px;
+  height:26px;
+  padding:0;          /* important */
+  margin:0;           /* important */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.appTop .left{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+
+/* Province pill: true glass chip */
+.pill{
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Section heading: slight glow */
+.sectionH{
+  letter-spacing: .2px;
+  text-shadow: 0 1px 12px rgba(0,0,0,.35);
+}
+
+/* Panels: glassmorphism + depth */
+.panel{
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+
+/* Buttons: modern gradient + press feedback */
+.appBtn{
+  background: linear-gradient(180deg, rgba(31,95,136,1), rgba(23,73,110,1));
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 12px 28px rgba(0,0,0,.25);
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+
+.appBtn:hover{
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.appBtn:active{
+  transform: translateY(0px) scale(.99);
+  filter: brightness(.98);
+  box-shadow: 0 10px 22px rgba(0,0,0,.22);
+}
+
+.appBtn.secondary{
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: none;
+}
+
+/* Status badges: slightly clearer */
+.ok, .warn{
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 1px 0 rgba(255,255,255,.06) inset;
+}
+
+/* Bottom nav: floating glass dock */
+.appNav{
+  background: rgba(2,6,23,.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,.10);
+}
+
+/* Tabs: hover and active feel */
+.tab{
+  transition: background-color .15s ease, opacity .15s ease, transform .15s ease;
+}
+
+.tab:hover{
+  opacity: .9;
+  background: rgba(255,255,255,.06);
+}
+
+.tab:active{
+  transform: scale(.99);
+}
+
+/* Keyboard focus: accessible highlight */
+a:focus-visible{
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* Reduce motion when user requests it */
+@media (prefers-reduced-motion: reduce){
+  .appBtn, .tab{
+    transition: none;
+  }
+}
+
+
+.kv{ color: rgba(229,231,235,.90); }
+.small{ color: rgba(229,231,235,.72); }
+
+
+/* =========================
+   VISUAL DEPTH & LIGHTING
+   ========================= */
+
+.app{
+  background:
+    radial-gradient(120% 80% at 50% -10%, rgba(56,189,248,.18), transparent 55%),
+    radial-gradient(90% 70% at 20% 20%, rgba(99,102,241,.12), transparent 60%),
+    linear-gradient(180deg, #0b1220 0%, #08101e 100%);
+}
+
+
+/* =========================
+   PANELS – GLASS EFFECT
+   ========================= */
+
+.panel{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.10),
+      rgba(255,255,255,.05)
+    );
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.25),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+
+/* =========================
+   BUTTON POLISH
+   ========================= */
+
+.appBtn{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(31,95,136,1),
+      rgba(23,73,110,1)
+    );
+  box-shadow:
+    0 12px 26px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.18);
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease,
+    filter .15s ease;
+}
+
+.appBtn:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.appBtn:active{
+  transform: translateY(0) scale(.98);
+  box-shadow:
+    0 8px 18px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+.appBtn.secondary{
+  background: rgba(255,255,255,.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+
+
+/* Icon chip */
+.ic{
+  width:18px;
+  height:18px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 18px;
+  opacity:.95;
+}
+.ic svg{
+  width:18px;
+  height:18px;
+}
+
+/* Progress meter */
+.meter{
+  margin-top:10px;
+  height:8px;
+  border-radius:999px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  overflow:hidden;
+}
+.meterFill{
+  height:100%;
+  border-radius:999px;
+  background: linear-gradient(90deg, rgba(56,189,248,.9), rgba(99,102,241,.85));
+}
+
+
+
+/* =========================
+   HAMBURGER MENU
+   ========================= */
+
+.topActions{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.menuBtn{
+  width:28px;
+  height:28px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.08);
+  color:#e5e7eb;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* Dropdown panel */
+.menuPanel{
+  position:absolute;
+  top:46px;
+  left:10px;
+  right:10px;
+
+  background:rgba(2,6,23,.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;
+  box-shadow:0 20px 40px rgba(0,0,0,.45);
+
+  padding:8px;
+  display:none;
+  z-index:10;
+}
+
+.menuPanel.open{
+  display:block;
+}
+
+/* Menu header */
+.menuHeader{
+  padding:8px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  margin-bottom:6px;
+}
+
+.menuName{
+  font-size:12px;
+  font-weight:800;
+}
+
+.menuSub{
+  font-size:9px;
+  opacity:.7;
+}
+
+/* Menu items */
+.menuItem{
+  display:block;
+  padding:10px 10px;
+  font-size:11px;
+  border-radius:10px;
+  color:#e5e7eb;
+}
+
+.menuItem:hover{
+  background:rgba(255,255,255,.08);
+}

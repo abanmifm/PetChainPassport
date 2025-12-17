@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>PetChain Passport | Passport</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header" style="display:none;"></div>
+
+    <div class="hero">
+      <div class="card">
+        <div class="phoneWrap">
+          <div class="phoneStage">
+            <div class="phoneScreen">
+              <div class="app">
+
+                <div class="appTop">
+                  <div class="left">
+                    <div class="appLogo" >
+                      <img src="img/App symbol.png" alt="App logo" />
+                    </div>
+                  </div>
+                  <div class="appTitle">PetChain Passport</div>
+                  <div class="topActions">
+                    <button class="menuBtn" aria-label="Open menu">
+                        ☰
+                    </button>
+                    </div>
+
+                </div>
+
+                <!-- Hamburger dropdown -->
+                <div class="menuPanel" id="menuPanel">
+                  <div class="menuHeader">
+                    <div class="menuName">Owner Profile</div>
+                    <div class="menuSub">Account &amp; plans</div>
+                  </div>
+
+                  <a class="menuItem" href="profile.html">Profile</a>
+                  <a class="menuItem" href="pricing.html">Pricing &amp; Plans</a>
+                  <a class="menuItem" href="index.html">Home</a>
+                </div>
+
+                <div class="appBody">
+
+                  <div class="sectionH">Passport</div>
+
+                  <div class="panel">
+                    <div class="row">
+                      <div class="kv" style="display:flex; gap:10px; align-items:flex-start;">
+                        <span class="ic" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M4 7.5h16v9H4v-9Z" stroke="rgba(229,231,235,.75)" stroke-width="1.2"/>
+                            <path d="M7 10h6M7 13h9" stroke="rgba(229,231,235,.75)" stroke-width="1.2" stroke-linecap="round"/>
+                          </svg>
+                        </span>
+                        <div>
+                          <b>Digital Passport ID</b>
+                          <div class="small">Verified profile, ready to share</div>
+                        </div>
+                      </div>
+                      <span class="ok">Verified</span>
+                    </div>
+
+                    <div class="meter" aria-label="Passport completeness 96 percent">
+                      <div class="meterFill" style="width:96%;"></div>
+                    </div>
+                    <div class="small" style="margin-top:6px;">Completeness: 96% (1 item needs review)</div>
+                  </div>
+
+                  <div class="sectionH">Identity</div>
+
+                  <div class="panel">
+                    <div class="row">
+                      <div class="kv" style="display:flex; gap:10px; align-items:flex-start;">
+                        <span class="ic" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 12.2c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4Z" stroke="rgba(229,231,235,.75)" stroke-width="1.2"/>
+                            <path d="M4.5 20c1.6-3.1 4.2-4.6 7.5-4.6S17.9 16.9 19.5 20" stroke="rgba(229,231,235,.75)" stroke-width="1.2" stroke-linecap="round"/>
+                          </svg>
+                        </span>
+                        <div>
+                          <b>Pet Name</b>
+                          <div class="small">Max</div>
+                        </div>
+                      </div>
+                      <span class="ok">Match</span>
+                    </div>
+                  </div>
+
+                  <div class="panel">
+                    <div class="row">
+                      <div class="kv" style="display:flex; gap:10px; align-items:flex-start;">
+                        <span class="ic" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M7 3.8v3M17 3.8v3" stroke="rgba(229,231,235,.75)" stroke-width="1.2" stroke-linecap="round"/>
+                            <path d="M5 7.2h14M6.2 5.8h11.6c.7 0 1.2.5 1.2 1.2v12.2c0 .7-.5 1.2-1.2 1.2H6.2c-.7 0-1.2-.5-1.2-1.2V7c0-.7.5-1.2 1.2-1.2Z" stroke="rgba(229,231,235,.75)" stroke-width="1.2"/>
+                          </svg>
+                        </span>
+                        <div>
+                          <b>Date of Birth</b>
+                          <div class="small">12 Mar 2022</div>
+                        </div>
+                      </div>
+                      <span class="ok">On file</span>
+                    </div>
+                  </div>
+
+                  <div class="sectionH">Microchip</div>
+                  <div class="panel">
+                    <div class="row">
+                      <div class="kv" style="display:flex; gap:10px; align-items:flex-start;">
+                        <span class="ic" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M9 9h6v6H9V9Z" stroke="rgba(229,231,235,.75)" stroke-width="1.2"/>
+                            <path d="M4 9h3M4 12h3M4 15h3M17 9h3M17 12h3M17 15h3M9 4v3M12 4v3M15 4v3M9 17v3M12 17v3M15 17v3"
+                              stroke="rgba(229,231,235,.75)" stroke-width="1.2" stroke-linecap="round"/>
+                          </svg>
+                        </span>
+                        <div>
+                          <b>Microchip Number</b>
+                          <div class="small">987654321012345</div>
+                        </div>
+                      </div>
+                      <span class="warn">Review</span>
+                    </div>
+                    <div class="small" style="margin-top:6px;">Tip: Confirm last 3 digits with the clinic scan.</div>
+                  </div>
+
+                  <div class="sectionH">Owner</div>
+                  <div class="panel">
+                    <div class="row">
+                      <div class="kv" style="display:flex; gap:10px; align-items:flex-start;">
+                        <span class="ic" aria-hidden="true">
+                          <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 12.2c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4Z" stroke="rgba(229,231,235,.75)" stroke-width="1.2"/>
+                            <path d="M5 20c1.8-3 4.2-4.6 7-4.6S17.2 17 19 20" stroke="rgba(229,231,235,.75)" stroke-width="1.2" stroke-linecap="round"/>
+                          </svg>
+                        </span>
+                        <div>
+                          <b>Owner Profile</b>
+                          <div class="small">Linked ID on file</div>
+                        </div>
+                      </div>
+                      <span class="ok">Active</span>
+                    </div>
+                  </div>
+
+                  <div class="btnRow">
+                    <a class="appBtn" href="index.html">Back Home</a>
+                    <a class="appBtn secondary" href="clinic-ai.html">Clinic + AI</a>
+                  </div>
+
+                  <div class="btnRow">
+                    <a class="appBtn secondary" href="profile.html">Profile</a>
+                    <a class="appBtn secondary" href="pricing.html">Pricing</a>
+                  </div>
+
+                </div>
+
+                <div class="appNav">
+                  <a class="tab" href="index.html">Home</a>
+                  <a class="tab active" href="passport.html">Passport</a>
+                  <a class="tab" href="clinic-ai.html">Clinic + AI</a>
+                  <a class="tab" href="travel.html">Travel</a>
+                </div>
+
+              </div>
+            </div>
+
+            <img class="phoneFrame" src="img/iphone-frame.png" alt="iPhone frame" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.querySelector('.menuBtn');
+    const menu = document.getElementById('menuPanel');
+
+    btn.addEventListener('click', () => menu.classList.toggle('open'));
+
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    });
+  </script>
+</body>
+</html>
