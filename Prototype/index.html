@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>PetChain Passport | Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header" style="display:none;"></div>
+
+    <div class="hero">
+      <div class="card">
+        <div class="phoneWrap">
+          <div class="phoneStage">
+            <div class="phoneScreen">
+              <div class="app">
+
+                <div class="appTop">
+                  <div class="left">
+                    <div class="appLogo" >
+                      <img src="img/App symbol.png" alt="App logo" />
+                    </div>
+                  </div>
+                  <div class="appTitle">PetChain Passport</div>
+                  <div class="topActions">
+                    <button class="menuBtn" aria-label="Open menu">
+                        ☰
+                    </button>
+                    </div>
+
+                </div>
+                
+                <div class="menuPanel" id="menuPanel">
+                <div class="menuHeader">
+                    <div class="menuName">Max’s Profile</div>
+                    <div class="menuSub">Owner account</div>
+                </div>
+
+                <a class="menuItem" href="profile.html">
+                    Profile
+                </a>
+
+                <a class="menuItem" href="pricing.html">
+                    Pricing & Plans
+                </a>
+
+                <a class="menuItem" href="index.html">
+                    Home
+                </a>
+                </div>
+
+
+
+                <div class="appBody">
+
+                  <div class="sectionH">Pet Snapshot</div>
+                  <div class="panel">
+                    <div class="kv">
+                      <b>Pet</b>
+                      <div class="small">Max · Cat · 3 years · Microchip linked</div>
+                    </div>
+                  </div>
+
+                  <div class="panel">
+                    <div class="row">
+                      <div class="kv">
+                        <b>Verification Status</b>
+                        <div class="small">Records verified with approved sources</div>
+                      </div>
+                      <span class="ok">Trusted</span>
+                    </div>
+                  </div>
+
+                  <div class="sectionH">Overview</div>
+
+                  <div class="panel">
+                    <div class="row">
+                      <div class="kv">
+                        <b>Pet Passport</b>
+                        <div class="small">All core records verified</div>
+                      </div>
+                      <span class="ok">Active</span>
+                    </div>
+                  </div>
+
+                  <div class="panel">
+                    <div class="row">
+                      <div class="kv">
+                        <b>Health &amp; Vaccines</b>
+                        <div class="small">Next reminder in 30 days</div>
+                      </div>
+                      <span class="warn">1 action</span>
+                    </div>
+                  </div>
+
+                  <div class="panel">
+                    <div class="row">
+                      <div class="kv">
+                        <b>Travel Readiness</b>
+                        <div class="small">Documents need review</div>
+                      </div>
+                      <span class="warn">Pending</span>
+                    </div>
+                  </div>
+
+                  <div class="sectionH">Today</div>
+                  <div class="panel">
+                    <div class="row">
+                      <div class="kv">
+                        <b>Vaccination Reminder</b>
+                        <div class="small">Rabies booster due soon</div>
+                      </div>
+                      <span class="warn">Due</span>
+                    </div>
+                  </div>
+
+                  <div class="panel">
+                    <div class="row">
+                      <div class="kv">
+                        <b>Overall Readiness</b>
+                        <div class="small">Identity, health, and travel combined</div>
+                      </div>
+                      <span class="ok">92%</span>
+                    </div>
+                  </div>
+
+                  <div class="sectionH">Upcoming</div>
+                  <div class="panel">
+                    <div class="kv">
+                      <b>Routine Health Check</b>
+                      <div class="small">Recommended in 2 months</div>
+                    </div>
+                  </div>
+
+                  <div class="btnRow">
+                    <a class="appBtn" href="passport.html">Open Pet Passport</a>
+                    <a class="appBtn secondary" href="travel.html">Check Travel</a>
+                  </div>
+
+                  <div class="btnRow">
+                    <a class="appBtn secondary" href="clinic-ai.html">Find Clinic</a>
+                    <a class="appBtn secondary" href="passport.html">View Documents</a>
+                  </div>
+
+                </div>
+
+                <div class="appNav">
+                  <a class="tab active" href="index.html">Home</a>
+                  <a class="tab" href="passport.html">Passport</a>
+                  <a class="tab" href="clinic-ai.html">Clinic + AI</a>
+                  <a class="tab" href="travel.html">Travel</a>
+                </div>
+
+              </div>
+            </div>
+
+            <img class="phoneFrame" src="img/iphone-frame.png" alt="iPhone frame" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+  const btn = document.querySelector('.menuBtn');
+  const menu = document.getElementById('menuPanel');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>
